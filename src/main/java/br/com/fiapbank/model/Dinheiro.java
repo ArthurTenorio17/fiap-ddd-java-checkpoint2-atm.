@@ -53,8 +53,10 @@ public final class Dinheiro {
     }
 
     @Override
-    public String toString() {
-        return valor.toPlainString();
-    }
+public String toString() {
+    return "R$ " + valor.setScale(2, java.math.RoundingMode.HALF_UP)
+            .toPlainString()
+            .replace(".", ",");
+}
 }
 
